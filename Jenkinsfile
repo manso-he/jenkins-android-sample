@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew clean && rm -rf ./app/build/'
-                sh './gradlew assembleProd' 
+                sh './gradlew assembleRelease' 
             }
         }
         stage("Sign APK"){
@@ -17,7 +17,7 @@ pipeline {
                 signAndroidApks(
                         keyStoreId: "android-test",
                         keyAlias: "android.keystore",
-                        apksToSign: "**/*-prod-release-unsigned.apk",
+                        apksToSign: "app/build/**/*.apk",
                         archiveSignedApks: false,
                         archiveUnsignedApks: false
                 )
