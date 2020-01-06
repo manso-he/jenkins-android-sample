@@ -19,7 +19,8 @@ pipeline {
                         keyAlias: "android.keystore",
                         apksToSign: "app/build/**/*.apk",
                         archiveSignedApks: false,
-                        archiveUnsignedApks: false
+                        archiveUnsignedApks: false,
+                        skipZipalign: true
                 )
             }
         }
