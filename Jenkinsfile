@@ -24,6 +24,11 @@ pipeline {
                 )
             }
         }
+        stage('Archive') {  
+            steps {
+                archiveArtifacts artifacts: 'app/build/outputs/**/*.apk', fingerprint: true 
+            }
+        }
     }
 
 }
