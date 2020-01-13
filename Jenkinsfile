@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Sign APK'
                 signAndroidApks(
-                        keyStoreId: "android-test",
+                        keyStoreId: "a20a9c66-1744-4b8f-b1a5-72e8073c0539",
                         keyAlias: "android.keystore",
                         apksToSign: "app/build/**/*.apk",
                         archiveSignedApks: false,
